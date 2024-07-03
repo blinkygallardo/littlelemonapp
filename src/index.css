@@ -11,3 +11,153 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* COLORS
+green
+  background-color: #495E57;
+yellow
+  background-color: #F4CE14;
+grey
+  background-color: #EDEFEE;
+salmon
+  background-color: #EE9972;
+*/
+
+#root {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 300px 270px;
+  grid-template-areas: "header"
+                       "content"
+                       "footer";
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #495E57;
+}
+
+a:visited {
+  color: hsl(160, 13%, 20%);
+}
+
+a:hover {
+  color: #F4CE14;
+}
+
+header {
+  grid-area: header;
+  margin-right: auto;
+}
+
+header img {
+  height: auto;
+  min-width: 10%;
+  max-width: 20%;
+  width: 80vw;
+  margin: 10px;
+}
+
+nav {
+  grid-area: header;
+  margin: auto;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+nav li {
+  display: inline;
+  list-style: none;
+  margin: 2rem;
+}
+
+footer li {
+  display: block;
+  list-style: none;
+  margin: 0px;
+}
+
+main {
+  grid-area: content;
+  background-color: #495E57;
+}
+
+footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-rows: 240px 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "logo nav contact social"
+                       "cp cp cp cp";
+  background-color: #EDEFEE;
+}
+
+footer .social {
+  grid-area: social;
+}
+
+footer .nav {
+  grid-area: nav;
+}
+
+footer .nav nav{
+  font-size: medium;
+  font-weight: normal;
+}
+
+footer .contact {
+  grid-area: contact;
+}
+
+footer .logo {
+  grid-area: logo;
+}
+
+.cp {
+  grid-area: cp;
+  margin: auto;
+  font-size: smaller;
+}
+
+footer img {
+  height: auto;
+  min-width: 10%;
+  max-width: 25%;
+  width: 10vw;
+  margin: 10px;
+}
+
+footer section {
+  margin: 10px;
+}
+
+footer div {
+  margin: 10px;
+}
+
+footer section label {
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 620px) {
+  nav li {
+    display: block;
+  }
+  footer img {
+    display: none;
+  }
+  footer .nav {
+    display: none;
+  }
+  footer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "contact social"
+                         "cp cp";
+  }
+  header img {
+    max-width: 35%;
+  }
+}
