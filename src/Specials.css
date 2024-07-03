@@ -1,0 +1,67 @@
+/* COLORS
+green
+  background-color: #495E57;
+yellow
+  background-color: #F4CE14;
+grey
+  background-color: #EDEFEE;
+salmon
+  background-color: #EE9972;
+*/
+
+.specials .caroussel {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.specials article {
+    width: 300px;
+    height: 400px;
+    display: grid;
+    grid-template-areas: "img"
+                         "headers"
+                         "desc";
+    background-color: #EDEFEE;
+    border-radius: 16px;
+    margin: 30px;
+}
+
+.specials article:hover {
+    box-shadow: 3px 3px 3px #495E57;
+}
+
+.specials h1, .specials h2, .specials p {
+    color: black;
+    margin-left: 20px;
+}
+
+.specials h3 {
+    color: #EE9972;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.specials h2, .specials h3 {
+    grid-area: headers;
+}
+
+.specials img {
+    grid-area: img;
+    width: 300px;
+    margin: 0px;
+    border-radius: 16px;
+}
+
+.specials p {
+    grid-area: desc;
+    width: 250px;
+}
+
+.specials h1 {
+    display: inline;
+}
+
+.specials button {
+    display: inline;
+}

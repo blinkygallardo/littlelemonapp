@@ -1,0 +1,53 @@
+/* COLORS
+green
+  background-color: #495E57;
+yellow
+  background-color: #F4CE14;
+grey
+  background-color: #EDEFEE;
+salmon
+  background-color: #EE9972;
+*/
+
+.callToActionContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 35px 35px 180px 40px;
+    grid-template-areas: "title img"
+                         "subtitle img"
+                         "text img"
+                         "button img";
+    background-color: #495E57;
+    padding: 30px;
+    margin-bottom: 70px;
+}
+
+.callToActionContainer h1 {
+    grid-area: title;
+    color: #F4CE14;
+    margin: 20px;
+}
+
+.callToActionContainer h2 {
+    grid-area: subtitle;
+    color: white;
+    margin: 20px;
+}
+
+.callToActionContainer p {
+    grid-area: text;
+    color: white;
+    margin: 20px;
+    padding-right: 150px;
+}
+
+.callToActionContainer button {
+    grid-area: button;
+}
+
+.callToActionContainer img {
+    grid-area: img;
+    width: 28%;
+    margin: auto;
+    border-radius: 16px;
+}

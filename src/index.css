@@ -26,7 +26,7 @@ salmon
 #root {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 300px 270px;
+  grid-template-rows: auto auto 270px;
   grid-template-areas: "header"
                        "content"
                        "footer";
@@ -82,7 +82,6 @@ footer li {
 
 main {
   grid-area: content;
-  background-color: #495E57;
 }
 
 footer {
@@ -140,6 +139,21 @@ footer div {
 
 footer section label {
   font-weight: bolder;
+}
+
+button {
+  background-color: #F4CE14;
+  color: #495E57;
+  border-radius: 16px;
+  border-width: 0px;
+  font-size: large;
+  margin: auto;
+  margin-left: 20px;
+  padding: 15px 50px;
+}
+
+button:hover {
+  color: white;
 }
 
 @media screen and (max-width: 620px) {
