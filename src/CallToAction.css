@@ -12,7 +12,7 @@ salmon
 .callToActionContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 35px 35px 180px 40px;
+    grid-template-rows: 35px 35px minmax(180px, auto) 40px;
     grid-template-areas: "title img"
                          "subtitle img"
                          "text img"
@@ -38,7 +38,6 @@ salmon
     grid-area: text;
     color: white;
     margin: 20px;
-    padding-right: 150px;
 }
 
 .callToActionContainer button {
@@ -47,6 +46,7 @@ salmon
 
 .callToActionContainer img {
     grid-area: img;
+    min-width: 200px;
     width: 28%;
     margin: auto;
     border-radius: 16px;

@@ -30,7 +30,7 @@ salmon
   grid-template-areas: "header"
                        "content"
                        "footer";
-  max-width: 1800px;
+  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
 }

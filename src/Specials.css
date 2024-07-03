@@ -12,6 +12,7 @@ salmon
 .specials .caroussel {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .specials article {
@@ -63,5 +64,7 @@ salmon
 }
 
 .specials button {
-    display: inline;
+    display: block;
+    margin-right: 80px;
+    margin-left: auto;
 }

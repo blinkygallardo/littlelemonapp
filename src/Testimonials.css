@@ -1,0 +1,77 @@
+/* COLORS
+green
+  background-color: #495E57;
+yellow
+  background-color: #F4CE14;
+grey
+  background-color: #EDEFEE;
+salmon
+  background-color: #EE9972;
+*/
+
+.testi {
+    display: block;
+    background-color: #EDEFEE;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.testi h1 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.testi .caroussel {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.testi article {
+    min-width: 180px;
+    max-width: 210px;
+    width: 15%;
+    background-color: white;
+    border-radius: 16px;
+    margin: 20px;
+    display: grid;
+    grid-template-areas: "rating"
+                         "name"
+                         "text";
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.testi .rating {
+    grid-area: rating;
+    text-align: left;
+}
+
+.testi .name {
+    grid-area: name;
+    margin-top: 0px;
+    margin-left: 100px;
+    margin-right: auto;
+}
+
+.testi img {
+    grid-area: name;
+    width: 80px;
+    margin-left: 0px;
+    margin-right: auto;
+}
+
+.testi .text {
+    grid-area: text;
+}
+
+.testi .star {
+    grid-area: rating;
+    margin-top: 14px;
+    margin-left: 78px;
+    width: 25px;
+}
