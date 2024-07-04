@@ -1,7 +1,10 @@
-export default function Reservation() {
+import ReservationForm from "./ReservationForm";
+
+export default function Reservation(props) {
     return (
         <div>
-            reservation page
+            <h1>Book a table</h1>
+            <ReservationForm availableTimes={props.availableTimes}  dateChanged={props.dateChanged}/>
         </div>
     );
   }
