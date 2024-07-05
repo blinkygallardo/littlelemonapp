@@ -34,3 +34,48 @@ test('Updates available times', () => {
   const times = options.map(c => c.innerHTML);
   expect(times).toEqual(["17:00", "17:30", "18:30", "20:00", "20:30", "21:00", "22:00", "23:30"]);
 });
+
+test('Fields have the correct attributes', () => {
+  goToReservationPage();
+
+  const dateElement = screen.getByLabelText("Choose date");
+  var min = dateElement.attributes["min"];
+  expect(min).toBeDefined();
+  expect(min.value).toEqual(new Date().toISOString().slice(0, 10));
+
+  const guestsElement = screen.getByLabelText("Number of guests");
+  var min = guestsElement.attributes["min"];
+  expect(min).toBeDefined();
+  expect(min.value).toEqual("1");
+
+  const phoneElement = screen.getByLabelText("Phone number *");
+  var req = phoneElement.attributes["required"];
+  expect(req).toBeDefined();
+
+  const submitElement = screen.getByText("Make your reservation", {exact : false});
+  var dis = submitElement.attributes["disabled"];
+  expect(dis).toBeDefined();
+});
+
+test('Can submit valid form', () => {
+  goToReservationPage();
+
+  const phoneElement = screen.getByLabelText("Phone number *");
+  fireEvent.change(phoneElement, { target: { value : "07919656565"}});
+
+  const submitElement = screen.getByText("Make your reservation", {exact : false});
+  expect(submitElement).toBeEnabled();
+});
+
+test('Cannot submit invalid form', () => {
+  goToReservationPage();
+
+  const phoneElement = screen.getByLabelText("Phone number *");
+  fireEvent.blur(phoneElement);
+
+  const errorElement = screen.getByText("Please add your mobile number", {exact : false});
+  expect(errorElement).toBeVisible();
+
+  const submitElement = screen.getByText("Make your reservation", {exact : false});
+  expect(submitElement).toBeDisabled();
+});

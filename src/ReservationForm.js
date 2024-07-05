@@ -7,7 +7,9 @@ export default function ReservationForm(props) {
         date :  today,
         time : "19:00",
         number : 2,
-        occasion : "None"
+        occasion : "None",
+        phone : undefined,
+        phoneTouched : false,
     });
     let onSubmit = (e) => {
         e.preventDefault();
@@ -23,7 +25,7 @@ export default function ReservationForm(props) {
     return (
         <form className="form" onSubmit={onSubmit}>
             <label htmlFor="res-date">Choose date</label>
-            <input type="date" id="res-date" value={booking.date} onChange={onDateChanged}/>
+            <input type="date" id="res-date" value={booking.date} onChange={onDateChanged} min={today}/>
             <label htmlFor="res-time">Choose time</label>
             <select id="res-time" value={booking.time} onChange={e => setBooking({ ...booking, time : e.target.value})}>
                 {props.availableTimes.map(t => <option key={t}>{t}</option>)}
@@ -37,7 +39,13 @@ export default function ReservationForm(props) {
                 <option>Anniversary</option>
                 <option>Engagement</option>
             </select>
-            <button type="submit">Make Your reservation</button>
+            <label htmlFor="res-phone">Phone number *</label>
+            <input type="text" id="res-phone" value={booking.phone} 
+                onChange={e => setBooking({ ...booking, phone : e.target.value})} 
+                onBlur={e => setBooking({ ...booking, phoneTouched : true})} 
+                required/>
+            {!booking.phone && booking.phoneTouched ? <div className='error'>Please add your mobile number so we can contact you.</div> : null}
+            <button type="submit" disabled={!booking.phone}>Make Your reservation</button>
         </form>
     );
   }
