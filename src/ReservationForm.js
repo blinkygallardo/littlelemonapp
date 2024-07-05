@@ -2,8 +2,6 @@ import './ReservationForm.css';
 import { useState } from 'react';
 
 export default function ReservationForm(props) {
-    //console.log(props);
-
     let today = new Date().toISOString().slice(0, 10);
     let [booking, setBooking] = useState({
         date :  today,
@@ -14,11 +12,12 @@ export default function ReservationForm(props) {
     let onSubmit = (e) => {
         e.preventDefault();
         console.log(booking);
+        props.submit(booking);
     };
 
     let onDateChanged = (e) => {
         setBooking({ ...booking, date : e.target.value});
-        props.dateChanged(booking.date);
+        props.dateChanged(e.target.valueAsDate);
     };
 
     return (
