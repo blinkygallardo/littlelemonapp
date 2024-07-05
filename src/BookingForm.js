@@ -1,7 +1,7 @@
-import './ReservationForm.css';
+import './BookingForm.css';
 import { useState } from 'react';
 
-export default function ReservationForm(props) {
+export default function BookingForm(props) {
     let today = new Date().toISOString().slice(0, 10);
     let [booking, setBooking] = useState({
         date :  today,
@@ -45,7 +45,7 @@ export default function ReservationForm(props) {
                 onBlur={e => setBooking({ ...booking, phoneTouched : true})} 
                 required/>
             {!booking.phone && booking.phoneTouched ? <div className='error'>Please add your mobile number so we can contact you.</div> : null}
-            <button type="submit" disabled={!booking.phone}>Make Your reservation</button>
+            <button type="submit" role='submitButton' disabled={!booking.phone}>Make Your reservation</button>
         </form>
     );
   }
