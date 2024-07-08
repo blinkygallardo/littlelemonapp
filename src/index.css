@@ -164,6 +164,7 @@ button:disabled {
 @media screen and (max-width: 620px) {
   nav li {
     display: block;
+    margin: 5px;
   }
   footer img {
     display: none;
@@ -178,5 +179,8 @@ button:disabled {
   }
   header img {
     max-width: 35%;
+  }
+  .callToActionContainer img {
+    display: none;
   }
 }
